@@ -2,6 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdmissionHistoryController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DiagnosisController;
+use App\Http\Controllers\FollowUpHistoryController;
+use App\Http\Controllers\PatientController;
+use App\Http\Controllers\PsychologistController;
 
 Route::get('/', function () {
     return view('welcome');
