@@ -23,4 +23,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//Rutas del proyecto
+    Route::resource('/dashboard/admissionHistory',AdmissionHistoryController::class);
+    Route::resource('/dashboard/appointment',AppointmentController::class);
+    Route::resource('/dashboard/diagnosis',DiagnosisController::class);
+    Route::resource('/dashboard/followUpHistory',FollowUpHistoryController::class);
+    Route::resource('/dashboard/psychologist',PsychologistController::class);
+    Route::resource('/dashboard/patient',PatientController::class);
+    
+
+
+
 require __DIR__.'/auth.php';

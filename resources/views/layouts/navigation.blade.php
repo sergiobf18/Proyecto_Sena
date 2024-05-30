@@ -16,6 +16,37 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/appointment')" :active="request()->routeIs('appointment')">
+                        {{ __('Agendamiento') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/admissionHistory')" :active="request()->routeIs('admissionHistory')">
+                        {{ __('HC de ingreso') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/followUpHistory')" :active="request()->routeIs('followUpHistory')">
+                        {{ __('HC de seguimiento') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/patient')" :active="request()->routeIs('patient')">
+                        {{ __('Pacientes') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/psychologist')" :active="request()->routeIs('psychologist')">
+                        {{ __('Psicologos') }}
+                    </x-nav-link>
+                </div>
+
             </div>
 
             <!-- Settings Dropdown -->

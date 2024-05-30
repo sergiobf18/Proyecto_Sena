@@ -13,7 +13,7 @@ class DiagnosisController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.diagnosis.index');
     }
 
     /**

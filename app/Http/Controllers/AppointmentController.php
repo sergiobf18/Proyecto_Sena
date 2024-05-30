@@ -13,7 +13,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.appointment.index');
     }
 
     /**
