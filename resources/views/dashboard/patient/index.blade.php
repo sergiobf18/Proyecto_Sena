@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Pagina para los pacientes
-</body>
-</html>
+@extends('dashboard.master')
+@section('titulo','Pacientes')
+@include('layouts/navigation')
+@section('contenido')
+<main>
+    <div>
+    <h1>Listado de pacinetes</h1>
+    <br>
+    <a href="{{url('dashboard/patient/create')}}">Ingresar nuevo paciente</a>
+    </div>
+</main>
+
+@endsection
