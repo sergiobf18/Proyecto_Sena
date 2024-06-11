@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\patient;
-use App\Http\Controllers\Controller;
+use App\Models\Models\patient;
+use App\Models\patient as ModelsPatient;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class PatientController extends Controller
 {
@@ -13,7 +14,8 @@ class PatientController extends Controller
      */
     public function index()
     {
-        return view('dasboard.patient.index');
+        $patient=ModelsPatient::all();
+        return view('dashboard.patient.index',['patient'=> $patient]);
     }
 
     /**
@@ -21,7 +23,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.patient.create');
     }
 
     /**
@@ -35,7 +37,7 @@ class PatientController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(patient $patient)
+    public function show(ModelsPatient $patient)
     {
         //
     }
@@ -43,7 +45,7 @@ class PatientController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(patient $patient)
+    public function edit(ModelsPatient $patient)
     {
         //
     }
@@ -51,7 +53,7 @@ class PatientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, patient $patient)
+    public function update(Request $request, ModelsPatient $patient)
     {
         //
     }
@@ -59,7 +61,7 @@ class PatientController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(patient $patient)
+    public function destroy(ModelsPatient $patient)
     {
         //
     }
