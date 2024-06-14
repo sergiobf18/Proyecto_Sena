@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50)->notNullable;
+            $table->enum('Document_type',['CC','TI','Pasaporte']);
             $table->string('last_name', 50)->notNullable;
             $table->string('second_last_name', 50)->notNullable;
             $table->date('date_of_birth')->notNullable;
