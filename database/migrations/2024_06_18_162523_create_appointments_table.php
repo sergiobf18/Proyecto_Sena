@@ -16,9 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('idPatient');
             $table->unsignedBigInteger('idPsychologist');
             $table->date('appointment_date')->notNull(); 
-            $table->string('appointment_status', 50)->notNull(); 
-            $table->foreign('idPatient')->references('id')->on('patients');
-            $table->foreign('idPsychologist')->references('id')->on('psychologists');
+            $table->string('appointment_status', 50)->notNull();
+            $table->text('notes')->nullable(); 
+            $table->foreign('idPatient')->references('id')->on('patients')->onDelete('cascade');;
+            $table->foreign('idPsychologist')->references('id')->on('psychologists')->onDelete('cascade');;
             $table->timestamps();
         });
     }

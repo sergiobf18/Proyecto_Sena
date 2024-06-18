@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('psychologists', function (Blueprint $table) {
             $table->id();
+            $table->string('Document_type')->notNullable;
+            $table->string('Document_number')->notNullable;
             $table->string('name', 50)->notNullable;
             $table->string('last_name', 50)->notNullable;
             $table->string('second_last_name', 50)->notNullable;
-            $table->integer('license')->notNullable;
-            $table->enum('Document_type',['CC','TI','Pasaporte']);
+            $table->string('license')->notNullable;
+            $table->string('phone_number', 50)->Nullable;
+            $table->string('email', 50)->Nullable;
             $table->timestamps();
         });
     }

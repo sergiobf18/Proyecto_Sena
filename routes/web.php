@@ -24,14 +24,15 @@ Route::middleware('auth')->group(function () {
 });
 
 //Rutas del proyecto
-    Route::resource('/dashboard/admissionHistory',AdmissionHistoryController::class);
-    Route::resource('/dashboard/appointment',AppointmentController::class);
-    Route::resource('/dashboard/diagnosis',DiagnosisController::class);
-    Route::resource('/dashboard/followUpHistory',FollowUpHistoryController::class);
-    Route::resource('/dashboard/psychologist',PsychologistController::class);
-    Route::resource('/dashboard/patient',PatientController::class);
+    Route::resource('dashboard/admissionHistory',AdmissionHistoryController::class);
+    Route::resource('dashboard/appointment',AppointmentController::class);
+    Route::resource('dashboard/diagnosis',DiagnosisController::class);
+    Route::resource('dashboard/followUpHistory',FollowUpHistoryController::class);
+    Route::resource('dashboard/psychologist',PsychologistController::class);
+    Route::resource('dashboard/patient',PatientController::class);
     
-
+// Ruta para la lista de pacientes
+Route::get('dashboard/patient', [PatientController::class, 'index'])->name('patient.index');
 
 
 require __DIR__.'/auth.php';

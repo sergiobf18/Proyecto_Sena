@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
+            $table->string('Document_type')->notNullable;
+            $table->string('Document_number')->notNullable;
             $table->string('name', 50)->notNullable;
-            $table->enum('Document_type',['CC','TI','Pasaporte']);
             $table->string('last_name', 50)->notNullable;
             $table->string('second_last_name', 50)->notNullable;
             $table->date('date_of_birth')->notNullable;
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string('education', 50)->Nullable;
             $table->string('occupation', 50)->Nullable;
             $table->string('email', 50)->Nullable;
+            $table->string('phone_number', 50)->notNullable;
             $table->timestamps();
         });
     }
