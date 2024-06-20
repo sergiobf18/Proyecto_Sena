@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -40,5 +41,33 @@ class UserFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+}
+class Patient extends Model
+{
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class, 'idPatient');
+    }
+}
+
+class Psychologist extends Model
+{
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class, 'idPsychologist');
+    }
+}
+
+class Appointment extends Model
+{
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class, 'idPatient');
+    }
+
+    public function psychologist()
+    {
+        return $this->belongsTo(Psychologist::class, 'idPsychologist');
     }
 }

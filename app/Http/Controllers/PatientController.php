@@ -94,8 +94,10 @@ class PatientController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(patient $patient)
+    public function destroy($id)
     {
-        //
+        $patient=patient::find($id);
+        $patient->delete();
+        return redirect("dashboard/patient");
     }
 }

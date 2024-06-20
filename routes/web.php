@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     
 // Ruta para la lista de pacientes
 Route::get('dashboard/patient', [PatientController::class, 'index'])->name('patient.index');
-
+Route::resource('appointment', AppointmentController::class);
+Route::resource('psychologists', PsychologistController::class);
 
 require __DIR__.'/auth.php';

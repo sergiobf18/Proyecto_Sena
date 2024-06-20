@@ -13,7 +13,8 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        return view('dashboard.appointment.index');
+        $appointments = Appointment::with('patient')->get();
+        return view('dashboard.appointment.index', ['appointments' => $appointments]);
     }
 
     /**
@@ -21,7 +22,14 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        //
+        
+    
+    $patients = \App\Models\Patient::all(); // Get all patients
+    return view('dashboard.appointment.create', compact('patients'));
+        
+       
+       
+        
     }
 
     /**
@@ -29,7 +37,22 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $appointment = new appointment();
+        $appointment->idPatient= $request->input('idPatient');
+        $appointment->idPsychologist= $request->input('idPsychologist');
+        $appointment->appointment_date= $request->input('appointment_date'); 
+        $appointment->appointment_status= $request->input('appointment_status');
+        $appointment->notes= $request->input('notes'); 
+        $appointment->save();
+        $request->validate([
+            'patient_id' => 'required',
+            'appointment_date' => 'required|date',
+            'appointment_status' => 'required',
+            'notes' => 'required|string',
+        ]);
+
+        Appointment::create($request->all());   
+        return view('dashboard.appointment.message', ['msg' => "Nueva cita creada"]);
     }
 
     /**
@@ -43,24 +66,35 @@ class AppointmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(appointment $appointment)
+    public function edit($id)
     {
-        //
+        $appointments = Appointment::findOrFail($id);
+        $patients = \App\Models\Patient::all();
+        return view('dashboard.appointment.edit', compact('appointment', 'patients'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, appointment $appointment)
+    public function update(Request $request, $id)
     {
-        //
+        $appointment=appointment::find($id);
+        $appointment->idPatient= $request->input('idPatient');
+        $appointment->idPsychologist= $request->input('idPsychologist');
+        $appointment->appointment_date= $request->input('appointment_date'); 
+        $appointment->appointment_status= $request->input('appointment_status');
+        $appointment->notes= $request->input('notes'); 
+        $appointment->save();   
+        return view('dashboard.appointment.message', ['msg' => "Nueva cita creada"]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(appointment $appointment)
+    public function destroy($id)
     {
-        //
+        $appointment=appointment::find($id);
+        $appointment->delete();
+        return redirect("dashboard/appointment");
     }
 }

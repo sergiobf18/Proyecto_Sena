@@ -13,7 +13,8 @@ class PsychologistController extends Controller
      */
     public function index()
     {
-        return view('dashboard.psychologist.index');
+        $psychologist=psychologist::all();
+        return view('dashboard.psychologist.index',['psychologist'=> $psychologist]);
     }
 
     /**
@@ -21,7 +22,7 @@ class PsychologistController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.psychologist.create');
     }
 
     /**
@@ -29,7 +30,17 @@ class PsychologistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $psychologist= new psychologist();
+        $psychologist->Document_type = $request->input('Document_type');
+        $psychologist->Document_number = $request->input('Document_number');
+        $psychologist->name = $request->input('name');
+        $psychologist->last_name = $request->input('last_name');
+        $psychologist->second_last_name = $request->input('second_last_name');
+        $psychologist->license = $request->input('license');
+        $psychologist->phone_number = $request->input('phone_number');
+        $psychologist->email = $request->input('phone_number');
+        $psychologist->save();
+        return view('dashboard.psychologist.message', ['msg' => "Nuevo psicologo creado"]);
     }
 
     /**
@@ -43,9 +54,10 @@ class PsychologistController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(psychologist $psychologist)
+    public function edit($id)
     {
-        //
+        $psychologist=psychologist::find($id);
+        return view('dashboard.psychologist.edit',['psychologist'=>$psychologist]);
     }
 
     /**
