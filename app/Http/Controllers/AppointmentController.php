@@ -23,9 +23,9 @@ class AppointmentController extends Controller
     public function create()
     {
         
-    
-    $patients = \App\Models\Patient::all(); // Get all patients
-    return view('dashboard.appointment.create', compact('patients'));
+    $patients = \App\Models\Patient::all();
+    $psychologists = \App\Models\Psychologist::all(); // Get all psychologists
+    return view('dashboard.appointment.create', compact('patients', 'psychologists'));
         
        
        
@@ -68,7 +68,7 @@ class AppointmentController extends Controller
      */
     public function edit($id)
     {
-        $appointments = Appointment::findOrFail($id);
+        $appointments = \App\Models\psychologist::findOrFail($id);
         $patients = \App\Models\Patient::all();
         return view('dashboard.appointment.edit', compact('appointment', 'patients'));
     }

@@ -42,6 +42,7 @@
             <label for="appointment_date">Fecha de la Cita</label>
             <input type="date" class="form-control" id="appointment_date" name="appointment_date" required>
         </div>
+        <br>
         <div class="form-group">
             <label for="appointment_status">Estado de la Cita</label>
             <select class="form-control" id="appointment_status" name="appointment_status" required>
@@ -56,7 +57,7 @@
             <label for="notes">Notas</label>
             <textarea class="form-control" id="notes" name="notes"></textarea>
         </div>
-        
+        <br>
         <div class="form-group row">
             <div class="col-sm-10 offset-sm-2">
                 <button type="submit" class="btn btn-success">Crear</button>
