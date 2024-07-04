@@ -18,13 +18,13 @@
                 </div>
                 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/appointment')" :active="request()->routeIs('appointment')">
+                    <x-nav-link :href="url('dashboard/appointment')" :active="request()->routeIs('appointment')" class="text-custom-color">
                         {{ __('Agendamiento') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/admissionHistory')" :active="request()->routeIs('admissionHistory')">
+                    <x-nav-link :href="url('dashboard/admissionHistory')" :active="request()->routeIs('admissionHistory')" class="text-custom-color">
                         {{ __('HC de ingreso') }}
                     </x-nav-link>
                 </div>
@@ -48,7 +48,7 @@
                 </div>
 
             </div>
-
+            
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">

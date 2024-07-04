@@ -1,8 +1,11 @@
 @extends('dashboard.master')
 @section('titulo','appointment')
+@include('layouts/navigation')
 @section('contenido')
-<main>
-  <h1>Agenda</h1>
+ 
+
+<main class="bs-primary-bg-subtle">
+  
   <br>
   <a href="{{url('dashboard/appointment/create')}}" class="btn btn-primary btn-lg">Nueva cita</a>
   <br><br>
@@ -53,4 +56,5 @@
     </tbody>
   </table>
 </main>
+
 @endsection

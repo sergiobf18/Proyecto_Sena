@@ -1,10 +1,10 @@
 @extends('dashboard.master')
-@section('titulo','Psycologos')
+@section('titulo','Psicologos')
 @include('layouts/navigation')
 @section('contenido')
 <main>
     <div>
-    <h1>Listado de Psycologos</h1>
+    <h1>Listado de Psicologos</h1>
     <br>
     <td><a href="{{url('dashboard/psychologist/create')}}" class="btn btn-primary btn-lg">Nuevo psicologo</a></td>
     <br><br>
