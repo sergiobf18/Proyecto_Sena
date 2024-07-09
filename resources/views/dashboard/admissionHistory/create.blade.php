@@ -2,9 +2,9 @@
 @section('titulo','HC de ingreso')
 @include('layouts/navigation')
 @section('contenido')
-
+<br>
 <div class="container">
-    <img src="{{ asset('storage\app\public\img\LOGO.jpg') }}" class="rounded float-start" alt="Logo" >
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBklEQVR4nO3Zvw4BQRAG8GtU+yT+HYmHQBQ+b6LkTqGRiEahlHgdtUNCdMh6AA8wcola7nKTsct8yfT7y87sFBsEGo3m9zN4UA+W7rBERStcnDbigL6lG8fh06pMEirHyVwUAKbDp1WN9/IIMAPEEWAE1OKDPAKMgHp0kEeAGSCOACMgjI7yCDACGtFRHgFGQGt2yYDYTZ0FtLfPTIjm8rxxEpCnAgW8ozdgtYWK5WdbyIzWVBquCpUZr78IGHsOgO8thH+eAfOhdeDDDDgBgO8tBN8BRvfASvdApugMDB19Ro3uAdI98N9DDAWQzA1wfjHlqCsbAJa6wojrwFKHDaDRaAJn8wKaFL5xkwdSHQAAAABJRU5ErkJggg==" class="rounded float-start" alt="Logo">
     <h1 class="display-6">HC DE INGRESO</h1>
     <br>
     <form action="{{ route('admissionHistory.store') }}" method="POST">
