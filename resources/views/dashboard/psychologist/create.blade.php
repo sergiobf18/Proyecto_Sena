@@ -60,15 +60,16 @@
                 <input type="text" class="form-control" name="license" id="license" placeholder="Ingrese la targeta profesional" required>
             </div>
         </div>
-               
-        
-        <br>
+       <br>
+       
         <div class="form-group row">
             <label for="email" class="col-sm-2 col-form-label">Correo</label>
             <div class="col-sm-8">
                 <input type="email" class="form-control" name="email" id="email" placeholder="Ingrese su correo" required>
             </div>
         </div>
+        
+        
         <br>
         <div class="form-group row">
             <label for="phone_number" class="col-sm-2 col-form-label">Ingrese el numero de telefono</label>
@@ -76,8 +77,7 @@
                 <input type="text" class="form-control" name="phone_number" id="phone_number" placeholder="Ingrese el numero de telefono" required>
             </div>
         </div>
-        
-        <br>
+         
 
         <div class="form-group row">
             <div class="col-sm-10 offset-sm-2">

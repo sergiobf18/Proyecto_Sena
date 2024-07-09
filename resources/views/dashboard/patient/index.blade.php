@@ -24,20 +24,20 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($patient as $singlePatient )
+            @foreach ($patient as $patient )
            
             <tr>
-                <td scope="row">{{$singlePatient->id }}</td>
-                <td scope="row">{{$singlePatient->Document_type}}</td>
-                <td scope="row">{{$singlePatient->Document_number}}</td>
-                <td scope="row">{{$singlePatient->name}}</td>
-                <td scope="row">{{$singlePatient->last_name}}</td>
-                <td scope="row">{{$singlePatient->second_last_name}}</td>
-                <td scope="row">{{$singlePatient->email}}</td>
-                <td scope="row">{{$singlePatient->phone_number}}</td>
-                <td><a href="{{url('dashboard/patient/'.$singlePatient->id.'/edit')}}" class="bi bi-pencil-square"></a></td>
+                <td scope="row">{{$patient->id }}</td>
+                <td scope="row">{{$patient->Document_type}}</td>
+                <td scope="row">{{$patient->Document_number}}</td>
+                <td scope="row">{{$patient->name}}</td>
+                <td scope="row">{{$patient->last_name}}</td>
+                <td scope="row">{{$patient->second_last_name}}</td>
+                <td scope="row">{{$patient->email}}</td>
+                <td scope="row">{{$patient->phone_number}}</td>
+                <td><a href="{{url('dashboard/patient/'.$patient->id.'/edit')}}" class="bi bi-pencil-square"></a></td>
                 <td>
-                    <form action="{{url('dashboard/patient/'.$singlePatient->id)}}" method="post">
+                    <form action="{{url('dashboard/patient/'.$patient->id)}}" method="post">
                         @method("DELETE")
                         @csrf
                         <button class="bi bi-eraser-fill" type="submit"></button>

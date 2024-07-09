@@ -30,22 +30,22 @@
     </thead>
     <tbody>
 
-      @foreach ($appointments as $NewAppointment)
+      @foreach ($appointment as $appointment)
         <tr>
-          <td scope="row">{{ $NewAppointment->id }}</td>
-          <td scope="row">{{ $NewAppointment->patient->Document_type ?? '' }}</td>
-          <td scope="row">{{ $NewAppointment->patient->Document_number ?? '' }}</td>
-          <td scope="row">{{ $NewAppointment->patient->name ?? '' }}</td>
-          <td scope="row">{{ $NewAppointment->patient->last_name ?? '' }}</td>
-          <td scope="row">{{ $NewAppointment->patient->second_last_name ?? '' }}</td>
-          <td scope="row">{{ $NewAppointment->patient->email ?? '' }}</td>
-          <td scope="row">{{ $NewAppointment->patient->phone_number ?? '' }}</td>
-          <td scope="row">{{ $NewAppointment->appointment_date }}</td>
-          <td scope="row">{{ $NewAppointment->appointment_status }}</td>
-          <td scope="row">{{ $NewAppointment->notes ?? '' }}</td>
-          <td><a href="{{url('dashboard/appointment/'.$NewAppointment->id.'/edit')}}" class="bi bi-pencil-square"></a></td>
+          <td scope="row">{{ $appointment->id }}</td>
+          <td scope="row">{{ $appointment->patient->Document_type ?? '' }}</td>
+          <td scope="row">{{ $appointment->patient->Document_number ?? '' }}</td>
+          <td scope="row">{{ $appointment->patient->name ?? '' }}</td>
+          <td scope="row">{{ $appointment->patient->last_name ?? '' }}</td>
+          <td scope="row">{{ $appointment->patient->second_last_name ?? '' }}</td>
+          <td scope="row">{{ $appointment->patient->email ?? '' }}</td>
+          <td scope="row">{{ $appointment->patient->phone_number ?? '' }}</td>
+          <td scope="row">{{ $appointment->appointment_date }}</td>
+          <td scope="row">{{ $appointment->appointment_status }}</td>
+          <td scope="row">{{ $appointment->notes ?? '' }}</td>
+          <td><a href="{{url('dashboard/appointment/'.$appointment->id.'/edit')}}" class="bi bi-pencil-square"></a></td>
           <td>
-            <form action="{{url('dashboard/appointment/'.$NewAppointment->id)}}" method="post">
+            <form action="{{url('dashboard/appointment/'.$appointment->id)}}" method="post">
               @method("DELETE")
               @csrf
               <button class="bi bi-eraser-fill" type="submit"></button>

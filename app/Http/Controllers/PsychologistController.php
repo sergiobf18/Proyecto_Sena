@@ -37,8 +37,8 @@ class PsychologistController extends Controller
         $psychologist->last_name = $request->input('last_name');
         $psychologist->second_last_name = $request->input('second_last_name');
         $psychologist->license = $request->input('license');
+        $psychologist->email = $request->input('email');
         $psychologist->phone_number = $request->input('phone_number');
-        $psychologist->email = $request->input('phone_number');
         $psychologist->save();
         return view('dashboard.psychologist.message', ['msg' => "Nuevo psicologo creado"]);
     }
@@ -63,16 +63,28 @@ class PsychologistController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, psychologist $psychologist)
+    public function update(Request $request, $id)
     {
-        //
+        $psychologist=psychologist::find($id);
+        $psychologist->Document_type = $request->input('Document_type');
+        $psychologist->Document_number = $request->input('Document_number');
+        $psychologist->name = $request->input('name');
+        $psychologist->last_name = $request->input('last_name');
+        $psychologist->second_last_name = $request->input('second_last_name');
+        $psychologist->license = $request->input('license');
+        $psychologist->email = $request->input('email');
+        $psychologist->phone_number = $request->input('phone_number');
+        $psychologist->save();
+        return view('dashboard.psychologist.message',['msg'=>"Los datos han sido actualizados"]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(psychologist $psychologist)
+    public function destroy($id)
     {
-        //
+        $psychologist=psychologist::find($id);
+        $psychologist->delete();
+        return redirect("dashboard/psychologist");
     }
 }

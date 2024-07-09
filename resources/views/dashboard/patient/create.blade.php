@@ -137,7 +137,7 @@
         <div class="form-group row">
             <div class="col-sm-10 offset-sm-2">
                 <button type="submit" class="btn btn-success">Crear</button>
-                <a href="{{ url('dashboard/patient') }}" class="btn btn-secondary">Regresar</a>
+                <a href="{{ route ('dashboard/patient') }}" class="btn btn-secondary">Regresar</a>
             </div>
         </div>
     </form>

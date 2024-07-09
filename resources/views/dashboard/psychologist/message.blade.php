@@ -5,6 +5,6 @@
 <h1>Mensaje</h1>
 <div class="container py-4">
     <h2>{{$msg}}</h2>
-    <a href="{{url('dashboard/psychologist.index')}}" class="btn btn-outline-dark">Regresar</a>
+    <a href="{{url('dashboard/psychologist')}}" class="btn btn-outline-dark">Regresar</a>
 </div>
 @endsection

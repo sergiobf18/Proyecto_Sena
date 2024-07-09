@@ -14,7 +14,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient=patient::all();
+        $patient= patient::all();
         return view('dashboard.patient.index',['patient'=> $patient]);
     }
 
@@ -31,7 +31,7 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $patient = new Patient();
+        $patient = new patient();
         $patient->Document_type = $request->input('Document_type');
         $patient->Document_number = $request->input('Document_number');
         $patient->name = $request->input('name');
@@ -46,6 +46,7 @@ class PatientController extends Controller
         $patient->phone_number = $request->input('phone_number');
         $patient->save();
         return view('dashboard.patient.message', ['msg' => "Nuevo paciente creado"]);
+        
     
 }
     
@@ -55,7 +56,7 @@ class PatientController extends Controller
      */
     public function show(patient $patient)
     {
-        
+        patient::all($patient);
     }
 
     /**
