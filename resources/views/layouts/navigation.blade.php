@@ -43,9 +43,16 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="url('dashboard/psychologist')" :active="request()->routeIs('psychologist')">
-                        {{ __('Psicologos') }}
+                        <div class="flex items-center">
+                            <img src="data:image/png;base64,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" 
+                            alt="Psychologist Image" class="mr-2"/> <br>
+                            <span>Psychologist</span>
+                        </div>
                     </x-nav-link>
                 </div>
+                
+                
+                
 
             </div>
             

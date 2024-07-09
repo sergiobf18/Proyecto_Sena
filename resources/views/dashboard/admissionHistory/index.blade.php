@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Pagina para las historias clinica de admisión
-</body>
-</html>
+@extends('dashboard.master')
+@section('titulo','HC de ingreso')
+@include('layouts/navigation')
+@section('contenido')
+<br>
+<br>
+
+<center>
+<div class="card">
+    <center>
+    <img width="100" height="100" src="https://img.icons8.com/cotton/100/green-file--v2.png" alt="green-file--v2">
+    </center>
+    <div class="card-body">
+      <h5 class="card-title">HISTORIA CLINICA DE INGRESO</h5>
+      <a href="{{url('dashboard/admissionHistory/create')}}" class="btn btn-primary">CREAR</a>
+    </div>
+  </div>
+</center>
