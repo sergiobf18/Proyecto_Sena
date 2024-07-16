@@ -25,13 +25,13 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="url('dashboard/admissionHistory')" :active="request()->routeIs('admissionHistory')" class="text-custom-color">
-                        {{ __('HC de ingreso') }}
+                        {{ __('Historias Clinicas') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/followUpHistory')" :active="request()->routeIs('followUpHistory')">
-                        {{ __('HC de seguimiento') }}
+                    <x-nav-link :href="url('dashboard/document')" :active="request()->routeIs('document')">
+                        {{ __('Fichas INS') }}
                     </x-nav-link>
                 </div>
 
@@ -43,12 +43,7 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="url('dashboard/psychologist')" :active="request()->routeIs('psychologist')">
-                        <div class="flex items-center">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEXklEQVR4nO2WbUxbZRSAi4maGP9pYvSPiT/84cdiZATWQvlwDJiJWWIgcThglF5YC7QwkwG3dDpM6T7ALIMBiQRiWzYJG8M6cRskZCq9n+0ohRUYsFFgg7YZQmEUlx7zXnahFgrdxMQfO8mTnvec8+bpe3PvbQWC5/F/j3CMeT1VPdT2RcXIpe04UHI7b8fEiQprqrZ9Hsoap0DVNB2UyraHcEgz1rVj4r0F1rRygxuuEnNw1/mYY2rcDW6ib22NON48/d+Kp0adMH+jB5baO8BF9T+9OFZmezUik/woMocNR+zOpj4Ix5gXtxM7HH/Cw98ZWDRehfuDE6GLkwuGXxZilCFWRtyLzzctJDwhLt80Jz5C3hHlkNUCAYQFivXXnUAOLXIwVjfc6h1bWyPwxqmtxSKMOp+o6PXtK+qFRGUvoE9/EgpN3igppebn4xV9n1W0zvnUehdsxemOBTj47Wh3UHFMHmHhJbEyYlN5dB5J8vPvpdpeSiruV6QUD5RtR5Jy8OMgWgiLySPu8oJPlSQkKU0bxOIj1Jj/5ebiOLwQKWF38feEP+hZD3rS1YAwkZReSi+hfJk4DVU1LHxTxUAWTkMmTnGgnlBKLwWK92AUFi8nVhIKTBCICCP+EIQg9gx2WcBr2RzUQzOBYqGExBM3uTqImFyS2FKbeYyRGy+yfy2bLUAYzTDesy5EOaqhnvFHy8qXxxj5jomzS+nvZk2rovoGM/S0m9fEKEc1lKOZrDKm2n9vlIQ8KJaRM7EyyhUnI5yrkM5YGeES5VJbvzjCMeaVrBLme+NF8wovXGRX4dc/XWBXDpeyzREZ5Pu7D1Pv+BMloRujMfIef1MJJfTlaClpj8gh3w2c3ZPNvr3hCxRVMF0eZlX0S6uZA+WoVnSC7kpTD5MqnetBILjONYPrXLPB1v4Unp92ivP7Uv4hFsrZt8oqmb6J39ZPivJSLXsrBmPeTP16mC1vcXtwndOnMriX1S1uT6jgT/Yo66c94kLr/g2nTlcPNB0oZr01dWZAoDy9vL8J9SIOka9lVI7aa28sw7Nw6soC7FNY1WtPRkbFbRWmGbLiDeNTZ9umvYR90XeifsSLQDmqoR6aydKOPNCTAM9CXbcXUo7a8jmpWM58qLs2O4de6D9cmwWtfhIsY49AUzsAmhobl6Ma6qGZps7Zx+d+ffTvxfuPWtNu9nu4n7AzLZPQbZ4H5dk7oNLQHChHtdMXJrkZNKtpm9tZcVPnDLAjS6DVOaC2upejUufgaqjHi+XnHD6V3rVcbnB7QgXXOX3FDfeXPins/3yDeNDhhdK6cThlmITW2pscJ/WTXA31eHFCAe0VSqnOwGc0GFESNjlORiwKMerntbvYX4xAp6tongDFyQEOlKMa30ezexX0sggj2wQhBvoXEycnPCKMXt+T/JV1V67WbiyoGrnEk39m+HJ6uc2GQLl/T6qxXxfnsT3CHLo4VHGkxPSGCKM7nmbP8xDsVPwN6KmT6Wgwa3kAAAAASUVORK5CYII=" 
-                            alt="Psychologist Image" class="mr-2"/>
-                            <br>
-                            <span>Psychologist</span>
-                        </div>
+                        {{ __('Psicologos') }}                              
                     </x-nav-link>
                 </div>
                 

@@ -1,13 +1,13 @@
 @extends('dashboard.master')
-@section('titulo','HC de ingreso')
+@section('titulo','HC de seguimiento')
 @include('layouts/navigation')
 @section('contenido')
 <br>
 <div class="container">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBklEQVR4nO3Zvw4BQRAG8GtU+yT+HYmHQBQ+b6LkTqGRiEahlHgdtUNCdMh6AA8wcola7nKTsct8yfT7y87sFBsEGo3m9zN4UA+W7rBERStcnDbigL6lG8fh06pMEirHyVwUAKbDp1WN9/IIMAPEEWAE1OKDPAKMgHp0kEeAGSCOACMgjI7yCDACGtFRHgFGQGt2yYDYTZ0FtLfPTIjm8rxxEpCnAgW8ozdgtYWK5WdbyIzWVBquCpUZr78IGHsOgO8thH+eAfOhdeDDDDgBgO8tBN8BRvfASvdApugMDB19Ro3uAdI98N9DDAWQzA1wfjHlqCsbAJa6wojrwFKHDaDRaAJn8wKaFL5xkwdSHQAAAABJRU5ErkJggg==" class="rounded float-start" alt="Logo">
-    <h1 class="display-6">HC DE INGRESO</h1>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNElEQVR4nO2ZMW7CQBBFfQcbszaItWIOkyjXSUFDQUOTgoYCKVIabgJIkV2lo0pDEPYNPh3IKCCQTGLDaMyS+dIvVztP/rO/sGWJRKL717rReoYXLOEHm2s9qoczdgB4+pti+MwvbpsfAkTDZ+7UHnYQbyr8MBKgW6sAAoQAPafFDwFCgL7T5IcAIcCr4/NDIGeQZBpvVp/zQk4n0eHcwFb8EMgBKDr83vtzQ9vlhwAhwNh2/4R4p+6JPIAsFpdE6Es1+SFAuMRlbAnAj+QL+BKh63SXEUqm8cnzWKaZf3tmwQWQXXp8cZleuAkAmB4hmA6QEOxAeiY6xuxAWiWA8RGC6QCJ9MBcekB2IJUeiOQZ/b89AAEI5AtU8oupsD29INuBtdJPrBCeXkDpRzIAkUhk3ay2LegY17cwS6gAAAAASUVORK5CYII=" class="rounded float-start" alt="Logo">
+    <h1 class="display-6">HC DE SEGUIMIENTO</h1>
     <br>
-    <form action="{{ route('admissionHistory.store') }}" method="POST">
+    <form action="{{ route('followUpHistory.store') }}" method="POST">
         @csrf
         <div class="form-group row">
                 <label for="dadhistory_date" class="col-form-label"><b>FECHA:</b></label>

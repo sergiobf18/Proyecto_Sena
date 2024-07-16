@@ -8,6 +8,7 @@ use App\Http\Controllers\DiagnosisController;
 use App\Http\Controllers\FollowUpHistoryController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PsychologistController;
+use App\Http\Controllers\DocumentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/followUpHistory',FollowUpHistoryController::class);
     Route::resource('dashboard/psychologist',PsychologistController::class);
     Route::resource('dashboard/patient',PatientController::class);
+    Route::resource('dashboard/document',DocumentController::class);
     
 // Ruta para la lista de pacientes
 Route::get('/patient', [PatientController::class, 'index'])->name('patient.index');
