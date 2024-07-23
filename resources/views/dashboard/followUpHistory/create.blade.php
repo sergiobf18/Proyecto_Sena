@@ -213,15 +213,11 @@
                         <label for="remission"><em>Remisión a otras especialidades de apoyo</em>:</label>
                         <textarea class="form-control" rows="5" id="clinical_assessment_of_suicide_risk" name="evaluacion_clinica"></textarea>
                     </div>
-
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>                            
         
-
         
-        
-                    
-        
-        <br>
-        <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </div>
 @endsection

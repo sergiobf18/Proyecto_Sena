@@ -32,6 +32,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/psychologist',PsychologistController::class);
     Route::resource('dashboard/patient',PatientController::class);
     Route::resource('dashboard/document',DocumentController::class);
+    Route::get('/generate-pdf', 'PDFController@generatePDF')->name('generate.pdf');
+    Route::get('/admissionHistory/pdf/{id}', [App\Http\Controllers\AdmissionHistoryController::class, 'generatePDF'])->name('admissionHistory.pdf');
+
+
     
 // Ruta para la lista de pacientes
 Route::get('/patient', [PatientController::class, 'index'])->name('patient.index');

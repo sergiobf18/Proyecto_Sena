@@ -17,6 +17,15 @@ return new class extends Migration
             $table->unsignedBigInteger('idPsychologist');
             $table->unsignedBigInteger('idDiagnosis');
             $table->date('fhistory_date')->notNull();
+            $table->string('psychologist', 50)->notNullable;
+            $table->string('Document_type', 50)->notNullable;
+            $table->string('last_name', 50)->notNullable;
+            $table->string('second_last_name', 50)->notNullable;
+            $table->date('date_of_birth')->notNullable;
+            $table->string('gender',50)->Nullable;
+            $table->string('personal_status', 50)->Nullable;
+            $table->string('education', 50)->Nullable;
+            $table->string('occupation', 50)->Nullable;
             $table->string('evolution', 50)->Nullable;
             $table->string('motive_for_consultation', 200)->Nullable;
             $table->string('subjective', 200)->Nullable;
