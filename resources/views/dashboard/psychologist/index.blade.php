@@ -7,9 +7,8 @@
    <br>
         <h1 class="text-center"><b>LISTADO DE PSICOLOGOS</b></h1>
     <br>
-    <div class="container">
-        <div class="row">
-          <div class="col-md-6 m-6">
+    <div class="container py-4">
+        
            
     <td><a href="{{url('dashboard/psychologist/create')}}" class="btn btn-info">Nuevo psicologo</a></td>
     <br><br>
@@ -55,8 +54,7 @@
         </tbody>  
 
 </div>
-</div>
-</div>
+
 </main>
 @endsection
 

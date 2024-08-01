@@ -7,9 +7,8 @@
     
     <h1 class="text-center"><b>LISTADO DE PACIENTES</b></h1>
     <br>
-    <div class="container">
-        <div class="row">
-          <div class="col-md-6 m-6">
+    <div class="container py-4">
+        
     <td><a href="{{url('dashboard.patient.create')}}" class="btn btn-info">Nuevo Paciente</a></td>
     <br><br>
     <table class="table table-bordered border-primary">
@@ -51,9 +50,8 @@
             @endforeach
         </tbody>  
 </div>
-</div>
-</div>
-</div>
+
+
 </main>
 @endsection
 

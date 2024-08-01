@@ -9,7 +9,7 @@
   <br>
   <a href="{{url('dashboard/appointment/create')}}" class="btn btn-info">Nueva cita</a>
   <br><br>
-
+  <div class="container py-4">
   <table class="table table-bordered border-primary">
     <thead>
       <tr class="table-dark">
@@ -55,6 +55,7 @@
       @endforeach
     </tbody>
   </table>
+</div>
 </main>
 
 @endsection
