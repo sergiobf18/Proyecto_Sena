@@ -4,7 +4,7 @@
 @section('contenido')
 
 <div>
-    <form action="{{ route('patient.store') }}" method="POST">
+    <form action="{{ route('dashboard/patient/store') }}" method="POST">
     @csrf
     <div class="form-group row">
     <label for="Document_type" class="col-sm-2 col-form-label">Tipo de Documento</label>

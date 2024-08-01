@@ -56,14 +56,14 @@ class AdmissionHistoryController extends Controller
     }
     public function generatePDF($id)
     {
-        $admissionHistory = admissionHistory::findOrFail($id);
+        /*$admissionHistory = admissionHistory::findOrFail($id);
 
         $data = [
             'admissionHistory' => $admissionHistory,
         ];
 
         $pdf = pdf::loadView('dashboard.admissionHistory.pdf', $data);
-        return $pdf->download('admissionHistory.pdf');
+        return $pdf->download('admissionHistory.pdf');*/
         
     }
     /**

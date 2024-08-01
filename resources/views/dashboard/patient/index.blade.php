@@ -3,10 +3,14 @@
 @include('layouts/navigation')
 @section('contenido')
 <main>
-    <div>
-    <h1>Listado de Pacientes</h1>
     <br>
-    <td><a href="{{url('dashboard/patient/create')}}" class="btn btn-primary btn-lg">Nuevo paciente</a></td>
+    
+    <h1 class="text-center"><b>LISTADO DE PACIENTES</b></h1>
+    <br>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 m-6">
+    <td><a href="{{url('dashboard.patient.create')}}" class="btn btn-info">Nuevo Paciente</a></td>
     <br><br>
     <table class="table table-bordered border-primary">
         <thead class="table-dark">
@@ -46,6 +50,9 @@
             </tr>
             @endforeach
         </tbody>  
+</div>
+</div>
+</div>
 </div>
 </main>
 @endsection

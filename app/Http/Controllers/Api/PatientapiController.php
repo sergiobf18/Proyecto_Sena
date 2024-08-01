@@ -1,30 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\patient;
 
-
-
-class PatientController extends Controller
+class PatientapiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $patients= patient::all();
-        return view('dashboard.patient.index',['patient'=> $patients]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        $patient= patient::all();
-        return view('dashboard.patient.create');
+        $patients = patient::all();
+        return($patients);
     }
 
     /**
@@ -32,7 +22,9 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        $patient = new patient();
+    
+
+        $patient = new Patient();
         $patient->Document_type = $request->input('Document_type');
         $patient->Document_number = $request->input('Document_number');
         $patient->name = $request->input('name');
@@ -47,32 +39,20 @@ class PatientController extends Controller
         $patient->phone_number = $request->input('phone_number');
         $patient->save();
         return view('dashboard.patient.message', ['msg' => "Nuevo paciente creado"]);
-        
-    
-}
-    
+    }
 
     /**
      * Display the specified resource.
      */
-    public function show(patient $patient)
+    public function show(string $id)
     {
-        patient::all($patient);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        $patient=patient::find($id);
-        return view('dashboard.patient.edit',['patient'=>$patient]);
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, string $id)
     {
         $patient=patient::find($id);
         $patient->Document_type = $request->input('Document_type');
@@ -89,17 +69,13 @@ class PatientController extends Controller
         $patient->phone_number = $request->input('phone_number');
         $patient->save();
         return view('dashboard.patient.message',['msg'=>"Los datos han sido actualizados"]);
-
-       
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        $patient=patient::find($id);
-        $patient->delete();
-        return redirect("dashboard/patient");
+        //
     }
 }

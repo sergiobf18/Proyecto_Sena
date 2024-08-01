@@ -4,7 +4,7 @@
 @section('contenido')
 
 <div>
-    <form action="{{ route('appointment.update',['appointment' => $appointment->id]) }}" method="POST">
+    <form action="{{ route('appointment.edit',['appointment' => $appointment->id]) }}" method="POST">
     @csrf
     <div class="form-group">
             <label for="idPatient">Paciente</label>

@@ -7,7 +7,7 @@
 <main class="bs-primary-bg-subtle">
   
   <br>
-  <a href="{{url('dashboard/appointment/create')}}" class="btn btn-primary btn-lg">Nueva cita</a>
+  <a href="{{url('dashboard/appointment/create')}}" class="btn btn-info">Nueva cita</a>
   <br><br>
 
   <table class="table table-bordered border-primary">

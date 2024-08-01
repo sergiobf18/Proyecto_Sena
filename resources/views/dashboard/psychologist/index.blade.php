@@ -3,10 +3,15 @@
 @include('layouts/navigation')
 @section('contenido')
 <main>
-    <div>
-    <h1>Listado de Psicologos</h1>
+    
+   <br>
+        <h1 class="text-center"><b>LISTADO DE PSICOLOGOS</b></h1>
     <br>
-    <td><a href="{{url('dashboard/psychologist/create')}}" class="btn btn-primary btn-lg">Nuevo psicologo</a></td>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 m-6">
+           
+    <td><a href="{{url('dashboard/psychologist/create')}}" class="btn btn-info">Nuevo psicologo</a></td>
     <br><br>
     <table class="table table-bordered border-primary">
         <thead class="table-dark">
@@ -48,6 +53,9 @@
             </tr>
             @endforeach
         </tbody>  
+
+</div>
+</div>
 </div>
 </main>
 @endsection

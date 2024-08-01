@@ -10,7 +10,7 @@
     <label for="idPatient">Paciente</label>
     <select class="form-control" id="idPatient" name="idPatient" required>
         <option value="">Selecciona un paciente</option>
-        @foreach($patients as $patient)
+        @foreach($patient as $patient)
             <option value="{{ $patient->id }}" 
                 data-document-type="{{ $patient->Document_type }}" 
                 data-document-number="{{ $patient->Document_number }}" 
@@ -30,7 +30,7 @@
             <label for="idPsychologist">Psicologo</label>
             <select class="form-control" id="idPsychologist" name="idPsychologist" required>
             <option value="">Selecciona un Psicologo</option>
-            @foreach($psychologists as $psychologist)
+            @foreach($psychologist as $psychologist)
             <option value="{{ $psychologist->id }}">{{ $psychologist->name }} {{ $psychologist->last_name }}
             {{ $psychologist->last_name }} </option>
                 @endforeach

@@ -9,6 +9,7 @@ use App\Http\Controllers\FollowUpHistoryController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PsychologistController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\Api\PsychologistapiController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,12 +35,14 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/document',DocumentController::class);
     Route::get('/generate-pdf', 'PDFController@generatePDF')->name('generate.pdf');
     Route::get('/admissionHistory/pdf/{id}', [App\Http\Controllers\AdmissionHistoryController::class, 'generatePDF'])->name('admissionHistory.pdf');
-
+    Route::get('/psychologists', [PsychologistapiController::class, 'index']);
 
     
 // Ruta para la lista de pacientes
-Route::get('/patient', [PatientController::class, 'index'])->name('patient.index');
 Route::resource('appointment', AppointmentController::class);
 Route::resource('psychologists', PsychologistController::class);
+
+
+
 
 require __DIR__.'/auth.php';
