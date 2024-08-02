@@ -8,7 +8,7 @@ use App\Models\psychologist;
 
 
 class PsychologistapiController extends Controller
-{
+{     
     /**
      * Display a listing of the resource.
      */

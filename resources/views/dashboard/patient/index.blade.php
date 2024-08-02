@@ -9,7 +9,7 @@
     <br>
     <div class="container py-4">
         
-    <td><a href="{{url('dashboard.patient.create')}}" class="btn btn-info">Nuevo Paciente</a></td>
+    <td><a href="{{ URL ('/dashboard/patient/create')}}" class="btn btn-info">Nuevo Paciente</a></td>
     <br><br>
     <table class="table table-bordered border-primary">
         <thead class="table-dark">

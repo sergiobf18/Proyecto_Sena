@@ -3,8 +3,12 @@
 @include('layouts.navigation')
 @section('contenido')
 
-<div>
-    <form action="{{ route('dashboard/patient/store') }}" method="POST">
+       <center>
+        <h1 class="btn btn-primary"><b>CREACIÓN DE PACIENTE</b></h1>
+        </center>
+    <br>
+    <div class="container py-4">
+    <form action="{{ route('patient.store') }}" method="POST">
     @csrf
     <div class="form-group row">
     <label for="Document_type" class="col-sm-2 col-form-label">Tipo de Documento</label>
@@ -137,7 +141,7 @@
         <div class="form-group row">
             <div class="col-sm-10 offset-sm-2">
                 <button type="submit" class="btn btn-success">Crear</button>
-                <a href="{{ route ('dashboard/patient') }}" class="btn btn-secondary">Regresar</a>
+                <a href="{{ route ('patient.index') }}" class="btn btn-secondary">Regresar</a>
             </div>
         </div>
     </form>

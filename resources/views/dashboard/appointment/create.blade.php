@@ -3,7 +3,8 @@
 @include('layouts.navigation')
 @section('contenido')
 
-<div>
+<div class="container py-4">
+    
     <form action="{{ route('appointment.store') }}" method="POST">
     @csrf
     <div class="form-group">
@@ -61,7 +62,7 @@
         <div class="form-group row">
             <div class="col-sm-10 offset-sm-2">
                 <button type="submit" class="btn btn-success">Crear</button>
-                <a href="{{ url('dashboard/appointment') }}" class="btn btn-secondary">Regresar</a>
+                <a href="{{ url('appointment') }}" class="btn btn-secondary">Regresar</a>
             </div>
         </div>
     </form>

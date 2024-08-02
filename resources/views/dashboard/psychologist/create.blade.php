@@ -2,8 +2,12 @@
 @section('titulo','Ingresar Psicologo')
 @include('layouts.navigation')
 @section('contenido')
-
-<div>
+<br>
+<center>
+    <h1 class="btn btn-primary"><b>CREACIÓN DE PSICOLOGO</b></h1>
+    </center>
+<br>
+<div class="container py-4">
     <form action="{{ route('psychologist.store') }}" method="POST">
     @csrf
     <div class="form-group row">
