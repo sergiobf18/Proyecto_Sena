@@ -33,7 +33,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/psychologist',PsychologistController::class);
     Route::resource('dashboard/patient',PatientController::class);
     Route::resource('dashboard/document',DocumentController::class);
-    Route::get('/generate-pdf', 'PDFController@generatePDF')->name('generate.pdf');
     Route::get('/admissionHistory/pdf/{id}', [App\Http\Controllers\AdmissionHistoryController::class, 'generatePDF'])->name('admissionHistory.pdf');
     Route::get('/psychologists', [PsychologistapiController::class, 'index']);
 
@@ -41,6 +40,7 @@ Route::middleware('auth')->group(function () {
 // Ruta para la lista de pacientes
 Route::resource('appointment', AppointmentController::class);
 Route::resource('psychologists', PsychologistController::class);
+Route::resource('diagnosis', DiagnosisController::class);
 
 
 
