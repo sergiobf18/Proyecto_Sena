@@ -9,7 +9,7 @@
     <br>
     <div class="container py-4">
         
-    <td><a href="{{ URL ('/dashboard/patient/create')}}" class="btn btn-info">Nuevo Paciente</a></td>
+    <td><a href="{{ URL ('/dashboard/patient/create')}}" class="btn btn-info">Nuevo Paciente <i class="bi bi-person-add"></i></a></td>
     <br><br>
     <table class="table table-bordered border-primary">
         <thead class="table-dark">
@@ -38,13 +38,15 @@
                 <td scope="row">{{$patient->second_last_name}}</td>
                 <td scope="row">{{$patient->email}}</td>
                 <td scope="row">{{$patient->phone_number}}</td>
-                <td><a href="{{url('dashboard/patient/'.$patient->id.'/edit')}}" class="bi bi-pencil-square"></a></td>
+                <td><a href="{{url('dashboard/patient/'.$patient->id.'/edit')}}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a></td>
                 <td>
+                    <center>
                     <form action="{{url('dashboard/patient/'.$patient->id)}}" method="post">
                         @method("DELETE")
                         @csrf
-                        <button class="bi bi-eraser-fill" type="submit"></button>
+                        <button class="btn btn-danger" type="submit"><i class="bi bi-x-square"></i></button>
                     </form>
+                </center>
                 </td>
             </tr>
             @endforeach

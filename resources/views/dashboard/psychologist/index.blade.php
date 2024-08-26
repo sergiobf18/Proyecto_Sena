@@ -10,7 +10,7 @@
     <div class="container py-4">
         
            
-    <td><a href="{{url('dashboard/psychologist/create')}}" class="btn btn-info">Nuevo psicologo</a></td>
+    <td><a href="{{url('dashboard/psychologist/create')}}" class="btn btn-info">Nuevo psicologo <i class="bi bi-person-check"></i></a></td>
     <br><br>
     <table class="table table-bordered border-primary">
         <thead class="table-dark">
@@ -41,13 +41,15 @@
                 <td scope="row">{{$singlePsychologist->license}}</td>
                 <td scope="row">{{$singlePsychologist->email}}</td>
                 <td scope="row">{{$singlePsychologist->phone_number}}</td>
-                <td><a href="{{url('dashboard/psychologist/'.$singlePsychologist->id.'/edit')}}" class="bi bi-pencil-square"></a></td>
+                <td><a href="{{url('dashboard/psychologist/'.$singlePsychologist->id.'/edit')}}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a></td>
                 <td>
+                    <center>
                     <form action="{{url('dashboard/psychologist/'.$singlePsychologist->id)}}" method="post">
                         @method("DELETE")
                         @csrf
-                        <button class="bi bi-eraser-fill" type="submit"></button>
+                        <button class="btn btn-danger" type="submit"><i class="bi bi-x-square"></i></button>
                     </form>
+                </center>
                 </td>
             </tr>
             @endforeach
