@@ -1,3 +1,8 @@
 *{
     margin: 10px;
 }
+
+.custom-alert {
+    background-color: #00893A; /* verde personalizado */
+    color: #020202;
+}

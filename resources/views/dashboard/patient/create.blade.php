@@ -3,6 +3,15 @@
 @include('layouts.navigation')
 @section('contenido')
 
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+    
        <center>
         <h1 class="btn btn-primary"><b>CREACIÓN DE PACIENTE</b></h1>
         </center>

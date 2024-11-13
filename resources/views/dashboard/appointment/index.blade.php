@@ -2,6 +2,17 @@
 @section('titulo','appointment')
 @include('layouts/navigation')
 @section('contenido')
+
+@if (session('success'))
+    <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <!-- Ícono de verificación con tamaño personalizado -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="me-2" viewBox="0 0 512 512">
+            <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/>
+        </svg>
+        <!-- Mensaje de éxito -->
+        {{ session('success') }}
+    </div>
+@endif
  
 <div>
 <main class="bs-primary-bg-subtle" >
@@ -11,7 +22,7 @@
   
   <div class="container py-4">
     <br>
-  <a href="{{url('dashboard/appointment/create')}}" class="btn btn-info"> <i class="bi bi-calendar-check"></i> Nueva cita</a>
+  <a href="{{url('/dashboard/appointment/create')}}" class="btn btn-info"> <i class="bi bi-calendar-check"></i> Nueva cita</a>
   
   <br><br>
 
@@ -64,5 +75,17 @@
   </table>
 </div>
 </main>
+
+<!-- Script para ocultar la alerta después de unos segundos -->
+<script>
+  // Ocultar la alerta después de 5 segundos
+  setTimeout(() => {
+      const alert = document.querySelector('.alert');
+      if (alert) {
+          alert.classList.remove('show'); // Oculta la alerta con un efecto
+          alert.remove(); // Elimina el elemento del DOM
+      }
+  }, 3000); // 3000 ms = 3 segundos
+</script>
 
 @endsection

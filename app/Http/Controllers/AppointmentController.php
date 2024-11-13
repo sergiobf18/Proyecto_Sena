@@ -37,22 +37,25 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        $appointment = new appointment();
-        $appointment->idPatient= $request->input('idPatient');
-        $appointment->idPsychologist= $request->input('idPsychologist');
-        $appointment->appointment_date= $request->input('appointment_date'); 
-        $appointment->appointment_status= $request->input('appointment_status');
-        $appointment->notes= $request->input('notes'); 
-        $appointment->save();
         $request->validate([
-            'patient_id' => 'required',
+            'idPatient' => 'required',
+            'idPsychologist' => 'required',
             'appointment_date' => 'required|date',
             'appointment_status' => 'required',
             'notes' => 'required|string',
         ]);
+    
+        Appointment::create([
+            'idPatient' => $request->input('idPatient'),
+            'idPsychologist' => $request->input('idPsychologist'),
+            'appointment_date' => $request->input('appointment_date'),
+            'appointment_status' => $request->input('appointment_status'),
+            'notes' => $request->input('notes'),
+        ]);
+    
 
-        Appointment::create($request->all());   
-        return view('dashboard.appointment.message', ['msg' => "Nueva cita creada"]);
+        //Appointment::create($request->all());   
+        return redirect()->route('appointment.index')->with('success', 'Cita creada exitosamente.');
     }
 
     /**
@@ -97,7 +100,14 @@ class AppointmentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function message(Request $request)
+    {
+        // Obtenemos el mensaje de la sesión
+        $msg = $request->session()->get('success', ''); // Usa un valor por defecto si no hay mensaje
+        return view('dashboard.appointment.message', compact('msg'));
+    }
+    
+     public function destroy($id)
     {
         $appointment=appointment::find($id);
         $appointment->delete();

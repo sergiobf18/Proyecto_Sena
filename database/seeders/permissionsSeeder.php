@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class permissionsSeeder extends Seeder
 {
@@ -48,11 +50,10 @@ class permissionsSeeder extends Seeder
             'Crear-Psychologist',
             'Editar-Psychologist',
             'Eliminar-Psychologist',
-             //table psychologist
-             'Ver-Psychologist',
-             'Crear-Psychologist',
-             'Editar-Psychologist',
-             'Eliminar-Psychologist',
+             
         ];
+        foreach($permisos as $permiso){
+            Permission::create(['name'=>$permiso]);
+        }
     }
 }

@@ -40,7 +40,8 @@ class PsychologistController extends Controller
         $psychologist->email = $request->input('email');
         $psychologist->phone_number = $request->input('phone_number');
         $psychologist->save();
-        return view('dashboard.psychologist.message', ['msg' => "Nuevo psicologo creado"]);
+        return redirect()->route('psychologist.index')->with('success', 'Psicologo creado exitosamente.'); 
+
     }
 
     /**
@@ -77,7 +78,12 @@ class PsychologistController extends Controller
         $psychologist->save();
         return view('dashboard.psychologist.message',['msg'=>"Los datos han sido actualizados"]);
     }
-
+    public function message(Request $request)
+    {
+        // Obtenemos el mensaje de la sesión
+        $msg = $request->session()->get('success', ''); // Usa un valor por defecto si no hay mensaje
+        return view('dashboard.patient.message', compact('msg'));
+    }
     /**
      * Remove the specified resource from storage.
      */

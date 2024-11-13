@@ -18,8 +18,8 @@
         <br>
 
         <div class="form-group">
-            <label for="psychologist"><b>NOMBRE DE QUIEN DILIGENCIA</b></label>
-            <select name="psychologist" id="psychologist" class="form-control">
+            <label for="idPsychologist"><b>NOMBRE DE QUIEN DILIGENCIA</b></label>
+            <select name="idPsychologist" id="idPsychologist" class="form-control">
                 @foreach($psychologist as $psychologist)
                     <option value="{{ $psychologist->id }}">{{ $psychologist->name }} {{ $psychologist->last_name }} {{ $psychologist->second_last_name }}</option>
                 @endforeach

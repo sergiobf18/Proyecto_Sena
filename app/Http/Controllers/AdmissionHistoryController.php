@@ -29,7 +29,7 @@ class AdmissionHistoryController extends Controller
     {
         $validatedData = $request->validate([
             'adhistory_date' => 'required|date',
-            'psychologist' => 'required|exists:psychologists,id',
+            'idPsychologist' => 'required|exists:psychologists,id',
             'idPatient' => 'required|exists:patients,id',
             'Document_type' => 'required',
             'Document_number' => 'required',
@@ -51,21 +51,18 @@ class AdmissionHistoryController extends Controller
             'remission' => 'nullable|string',
         ]);
     
-        AdmissionHistory::create($validatedData);
-            return redirect()->route('admissionHistory.index')->with('success', 'Historial de ingreso guardado exitosamente.');
-    }
-    public function generatePDF($id)
-    {
-        /*$admissionHistory = admissionHistory::findOrFail($id);
-
-        $data = [
-            'admissionHistory' => $admissionHistory,
-        ];
-
-        $pdf = pdf::loadView('dashboard.admissionHistory.pdf', $data);
-        return $pdf->download('admissionHistory.pdf');*/
+        //AdmissionHistory::create($validatedData);
+        //return redirect()->route('admissionHistory.index')->with('success', 'Historial de ingreso guardado exitosamente.');
         
+        $admissionHistory = AdmissionHistory::create($validatedData);
+
+        // Generar el PDF con los datos
+        $pdf = Pdf::loadView('dashboard.admissionHistory.pdf', ['data' => $validatedData]);
+
+        // Descargar el PDF
+        return $pdf->download('Historial_Ingreso.pdf');
     }
+   
     /**
      * Display the specified resource.
      */

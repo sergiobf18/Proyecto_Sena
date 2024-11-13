@@ -46,7 +46,8 @@ class PatientController extends Controller
         $patient->email = $request->input('email');
         $patient->phone_number = $request->input('phone_number');
         $patient->save();
-        return view('dashboard.patient.message', ['msg' => "Nuevo paciente creado"]);
+        return redirect()->route('patient.index')->with('success', 'Paciente creado exitosamente.'); 
+        //return view('dashboard.patient.message', ['msg' => "Nuevo paciente creado"]);
         
     
 }
@@ -93,9 +94,13 @@ class PatientController extends Controller
        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function message(Request $request)
+    {
+        // Obtenemos el mensaje de la sesión
+        $msg = $request->session()->get('success', ''); // Usa un valor por defecto si no hay mensaje
+        return view('dashboard.patient.message', compact('msg'));
+    }
+
     public function destroy($id)
     {
         $patient=patient::find($id);
