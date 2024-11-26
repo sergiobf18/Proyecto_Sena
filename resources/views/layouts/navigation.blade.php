@@ -18,32 +18,44 @@
                 </div>
                 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/appointment')" :active="request()->routeIs('appointment')" class="text-custom-color">
+                    <x-nav-link :href="url('dashboard/appointment')" :active="request()->routeIs('appointment.*')" class="text-custom-color">
                         {{ __('Agendamiento') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/admissionHistory')" :active="request()->routeIs('admissionHistory')" class="text-custom-color">
+                    <x-nav-link :href="url('dashboard/admissionHistory')" :active="request()->routeIs('admissionHistory.*')" class="text-custom-color">
                         {{ __('Historias Clinicas') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/document')" :active="request()->routeIs('document')">
+                    <x-nav-link :href="url('dashboard/document')" :active="request()->routeIs('document.*')">
                         {{ __('Fichas INS') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/patient')" :active="request()->routeIs('patient')">
+                    <x-nav-link :href="url('dashboard/patient')" :active="request()->routeIs('patient.*')">
                         {{ __('Pacientes') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/psychologist')" :active="request()->routeIs('psychologist')">
+                    <x-nav-link :href="url('dashboard/psychologist')" :active="request()->routeIs('psychologist.*')">
                         {{ __('Psicologos') }}                              
+                    </x-nav-link>
+                </div>
+                
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/role')" :active="request()->routeIs('role.*') ">
+                        {{ __('Roles') }}                              
+                    </x-nav-link>
+                </div>
+                
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/usuario')" :active="request()->routeIs('usuario.*') ">
+                        {{ __('Usuarios') }}                              
                     </x-nav-link>
                 </div>
                 

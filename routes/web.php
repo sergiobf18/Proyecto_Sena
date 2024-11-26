@@ -11,6 +11,7 @@ use App\Http\Controllers\PsychologistController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Api\PsychologistapiController;
+use App\Http\Controllers\UsuarioController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,7 +37,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/document',DocumentController::class);
     
     //Ruta roles
-    Route::resource('/Role',RoleController::class);
+    Route::resource('dashboard/role',RoleController::class);
+    Route::resource('dashboard/roles', RoleController::class);
+    Route::resource('dashboard/usuario', UsuarioController::class);
+    
     // Api
     Route::get('/admissionHistory/pdf/{id}', [App\Http\Controllers\AdmissionHistoryController::class, 'generatePDF'])->name('admissionHistory.pdf');
     Route::get('/psychologists', [PsychologistapiController::class, 'index']);
