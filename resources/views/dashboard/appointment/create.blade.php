@@ -11,7 +11,11 @@
         </button>
     </div>
     @endif
-
+    <br>
+    
+    <center>
+     <h1 class="btn btn-primary"><b>CREACIÓN DE CITA</b></h1>
+     </center>
 
 <div class="container py-4">
     

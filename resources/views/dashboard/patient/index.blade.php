@@ -55,7 +55,7 @@
                 <td><a href="{{url('dashboard/patient/'.$patient->id.'/edit')}}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a></td>
                 <td>
                     <center>
-                    <form action="{{url('dashboard/patient/'.$patient->id)}}" method="post">
+                    <form action="{{url('dashboard/patient/'.$patient->id)}}" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar al paciente?');">
                         @method("DELETE")
                         @csrf
                         <button class="btn btn-danger" type="submit"><i class="bi bi-x-square"></i></button>

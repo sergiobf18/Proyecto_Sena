@@ -11,7 +11,7 @@
             </button>
         </div>
     @endif
-    
+    <br>
        <center>
         <h1 class="btn btn-primary"><b>CREACIÓN DE PACIENTE</b></h1>
         </center>

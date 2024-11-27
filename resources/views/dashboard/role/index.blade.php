@@ -31,7 +31,15 @@
                 @endforelse
                 
                 <td> <a href="{{ route('role.edit', $rol->id) }}" class="btn btn-success">Editar</a></td>
-                <td><a href="{{ route ('role.index')}}"class="btn btn-danger" type="submit"><i class="bi bi-x-square">Eliminar</a></td>    
+                <td>
+                    <form action="{{ route('role.destroy', $rol->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este rol?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-x-square"></i> Eliminar
+                        </button>
+                    </form>
+                </td>    
                 </td> 
             </tr> 
             @endforeach
